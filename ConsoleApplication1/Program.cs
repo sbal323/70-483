@@ -13,9 +13,10 @@ namespace ConsoleApplication1
         {
             //SpeechSynthesizer speech = new SpeechSynthesizer();
             //Console.WriteLine("Please listen carefully and answer y/n");
+            ////speech.SelectVoice("ScanSoft Katerina_Full_22kHz");
             //speech.Speak("Hello there! How are you? What do you think about my voice? Isn't it perfect?");
             //char answer = Console.ReadKey().KeyChar;
-            //if(answer.ToString().ToLower() == "y")
+            //if (answer.ToString().ToLower() == "y")
             //{
             //    speech.Speak("Oh! Thank you!");
             //}
@@ -25,6 +26,11 @@ namespace ConsoleApplication1
             //}
 
             GradeBook book = new GradeBook();
+            NewMethod(book);
+        }
+
+        private static void NewMethod(GradeBook book)
+        {
             book.AddGrade(.25f);
             book.AddGrade(40);
             book.AddGrade(60);
