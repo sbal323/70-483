@@ -8,6 +8,7 @@ namespace ConsoleApplication1
 {
     public class GradeBook
     {
+        public event ItemAdded GradeAdded;
         List<float> grades;
         public GradeBook()
         {
@@ -16,6 +17,7 @@ namespace ConsoleApplication1
         public void AddGrade(float grade)
         {
             grades.Add(grade);
+            GradeAdded(this, new ItemAddedEventArgs { newGrade = grade });
         }
         public GradeBookResult ComputeResult()
         {
@@ -27,5 +29,12 @@ namespace ConsoleApplication1
 
             return res;
         }
+    }
+
+    public delegate void ItemAdded(object sender, ItemAddedEventArgs args);
+
+    public class ItemAddedEventArgs: EventArgs
+    {
+        public float newGrade { get; set; }
     }
 }

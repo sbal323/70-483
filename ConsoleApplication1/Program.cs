@@ -26,7 +26,12 @@ namespace ConsoleApplication1
             //}
 
             GradeBook book = new GradeBook();
+            book.GradeAdded += OnGradeAdded;
             NewMethod(book);
+        }
+        static void OnGradeAdded(object sender, ItemAddedEventArgs args)
+        {
+            Console.WriteLine($"New gared was added { args.newGrade.ToString() }");
         }
 
         private static void NewMethod(GradeBook book)
